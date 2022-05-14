@@ -10,3 +10,9 @@
 # __email__ = itsmohitanand@gmail.com
 # __status__ = Development
 # ##########################################################
+
+
+DATA_DIR = '/Users/mohitanand/DocL/data/CW4F_data/'
+
+GLOFAS_DIR = DATA_DIR + 'glofas/'
+EFAS_DIR = DATA_DIR + 'efas/'

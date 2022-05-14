@@ -10,3 +10,26 @@
 # __email__ = itsmohitanand@gmail.com
 # __status__ = Development
 # ##########################################################
+
+from datetime import datetime
+from cw.cfg import GLOFAS_DIR, EFAS_DIR
+import xarray as xr
+import datetime
+
+def read_glofas_data(year:int=2021, day:int=1, month:int=1):
+    """
+    Reads the GLOFAS data for the given year and day.
+    """
+    file_name = GLOFAS_DIR + 'glofas_' + str(year) + '.grib'
+
+    glofas_dataset = xr.open_dataset(file_name)
+    
+    return glofas_dataset.get("dis24").sel(time=datetime.datetime(year, month, day))
+
+def read_efas_data(year:int=2021, day:int=1, month:int=1):
+    """
+    Reads the GLOFAS data for the given year and day.
+    """
+    file_name = EFAS_DIR + 'efas_' + str(year) + '.grib'
+    efas_dataset = xr.open_dataset(file_name)
+    return efas_dataset.get("dis24").sel(time=datetime.datetime(year, month, day, hour=6))

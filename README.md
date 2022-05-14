@@ -18,5 +18,16 @@ Main repository for challenge 31/2022: Flood forecasting: the power of citizen s
 ### Cheat sheet 
 - To generate the requirements.txt `conda list -e > requirements.txt`
 
+### BUGS
+
+If you have issue with cfgrib
+# install library
+RUN pip uninstall cfgrib
+RUN pip install ecmwflibs
+RUN pip install eccodes==1.3.1
+RUN pip install cfgrib
+RUN pip install -e .
+
 ### To-DO 
 - Improve the readme file.
+- Discuss about the environment file
