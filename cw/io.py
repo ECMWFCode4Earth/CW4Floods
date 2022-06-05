@@ -27,14 +27,13 @@ def read_glofas_data(year:int=2021, day:int=1, month:int=1):
     
     return glofas_dataset.get("dis24").sel(time=datetime.datetime(year, month, day))
 
-def read_efas_data(year:int=2021, day:int=1, month:int=1):
+def read_efas_data(year:int):
     """
     Reads the GLOFAS data for the given year and day.
     """
     file_name = EFAS_DIR + 'efas_' + str(year) + '.grib'
-    print(file_name)
     efas_dataset = xr.open_dataset(file_name)
-    return efas_dataset.get("dis24").sel(time=datetime.datetime(year, month, day, hour=6))
+    return efas_dataset
 
 def read_cw_data():
     """
