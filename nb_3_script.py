@@ -19,6 +19,7 @@ freq, station_id = [ list(tuple) for tuple in tuples]
 
 index = [i for i, val in enumerate(freq) if val>1]
 station_id = [station_id[i] for i in index]
+cw_data = cw_data[cw_data.ROOT_ID.isin(station_id)]
 
 efas = read_efas_data(2020)
 

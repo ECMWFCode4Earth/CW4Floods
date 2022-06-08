@@ -12,7 +12,7 @@
 # ##########################################################
 
 from datetime import datetime
-from cw.cfg import GLOFAS_DIR, EFAS_DIR, CW_DIR
+from cw.cfg import GLOFAS_DIR, EFAS_DIR, CW_DIR, DATA_DIR
 import xarray as xr
 import datetime
 import pandas as pd
@@ -47,3 +47,9 @@ def read_cw_data():
     return data
 
 
+def read_cw_eu_station():
+    file_name = DATA_DIR + 'station_ind.tsv'
+
+    data = pd.read_csv(file_name, delimiter="\t")
+
+    return data
