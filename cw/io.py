@@ -12,7 +12,7 @@
 # ##########################################################
 
 from datetime import datetime
-from cw.cfg import GLOFAS_DIR, EFAS_DIR, CW_DIR
+from cw.cfg import GLOFAS_DIR, EFAS_DIR, CW_DIR, DATA_DIR
 import xarray as xr
 import datetime
 import pandas as pd
@@ -27,14 +27,13 @@ def read_glofas_data(year:int=2021, day:int=1, month:int=1):
     
     return glofas_dataset.get("dis24").sel(time=datetime.datetime(year, month, day))
 
-def read_efas_data(year:int=2021, day:int=1, month:int=1):
+def read_efas_data():
     """
     Reads the GLOFAS data for the given year and day.
     """
-    file_name = EFAS_DIR + 'efas_' + str(year) + '.grib'
-    print(file_name)
+    file_name = EFAS_DIR + 'efas_2017_2021.grib'
     efas_dataset = xr.open_dataset(file_name)
-    return efas_dataset.get("dis24").sel(time=datetime.datetime(year, month, day, hour=6))
+    return efas_dataset
 
 def read_cw_data():
     """
@@ -48,3 +47,9 @@ def read_cw_data():
     return data
 
 
+def read_cw_eu_station():
+    file_name = DATA_DIR + 'station_ind.tsv'
+
+    data = pd.read_csv(file_name, delimiter="\t")
+
+    return data
