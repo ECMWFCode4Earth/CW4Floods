@@ -22,10 +22,6 @@ for each_data in data:
     y_pred_test = reg.predict(x_test)
     y_pred_train = reg.predict(x_train) 
 
-    print(y_pred_test.shape)
-    print(y_pred_train.shape)
-
-    
     fig, (ax1, ax2) = plt.subplots(1, 2)
 
     ax1.scatter(y_train, y_pred_train)
