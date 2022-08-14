@@ -21,10 +21,10 @@ index = [i for i, val in enumerate(freq) if val>1]
 station_id = [station_id[i] for i in index]
 cw_data = cw_data[cw_data.ROOT_ID.isin(station_id)]
 
-efas = read_efas_data(2020)
+efas = read_efas_data()
 
 distance_dict = dict()
-mask = efas.dis24.mean(axis=0).values
+mask = efas.dis06.mean(axis=0).values
 n_station = 0
 
 with open(DATA_DIR + 'station_ind.tsv', "w") as f:
