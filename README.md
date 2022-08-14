@@ -10,10 +10,13 @@ Main repository for challenge 31/2022: Flood forecasting: the power of citizen s
 ```
   📦CW4F_data
   ┣ 📂efas
-  ┃ ┣ 📜efas_2020.grib
   ┣ 📂glofas
-  ┃ ┣ 📜glofas_2021.grib
-  ┗ 📜export.csv
+  ┃ ┣ 📜glofas_2017_2020.grib
+  ┣ 📂image
+  ┣ 📜image.zip
+  ┣ shortlisted_stations_v1.csv
+  ┗ station_ind_v1.tsv
+   
 ```
 - To make changes
   - Added it in the task for github
