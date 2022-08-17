@@ -8,7 +8,7 @@ ml_data = pd.read_csv(DATA_DIR + "ml_data_v1.csv")
 
 raw_data = Data(ml_data)
 
-data = raw_data.get_ml_data(["HEIGHT1[cm]",])
+data = raw_data.get_ml_data(["HEIGHT1[cm]",'SPOTTED_AT'])
 
 for each_data in data:
     x_train = each_data.x_train
