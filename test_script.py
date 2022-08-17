@@ -1,8 +1,8 @@
 # This script will be delete in the final version. It is here just for the testing code
+from cw.cfg import DATA_DIR
 
-from cw.io import read_cw_data
+import pandas as pd
 
-data = read_cw_data()
+ml_data = pd.read_csv(DATA_DIR + "ml_data_v1.csv")
 
-print(data.columns)
-
+print(ml_data.efas_dis06.min())

@@ -17,3 +17,4 @@ DATA_DIR = '/home/esowc31/CW4F_data/'
 GLOFAS_DIR = DATA_DIR + 'glofas/'
 EFAS_DIR = DATA_DIR + 'efas/'
 CW_DIR = DATA_DIR + 'cw/'
+PLOT_DIR = DATA_DIR + "plots/"
