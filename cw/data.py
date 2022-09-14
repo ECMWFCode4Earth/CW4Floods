@@ -29,7 +29,6 @@ class Data(object):
         print(train_data.shape)
         print(test_data.shape)
 
-
         return train_data, test_data
 
     def get_ml_data(self, keep:List = []):

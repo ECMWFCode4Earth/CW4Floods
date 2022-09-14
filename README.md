@@ -10,9 +10,9 @@ Main repository for challenge 31/2022: Flood forecasting: the power of citizen s
 ```
   📦CW4F_data
   ┣ 📂efas
-  ┣ 📂glofas
-  ┃ ┣ 📜glofas_2017_2020.grib
+  ┃ ┣ 📜efas_2017_2020.grib
   ┣ 📂image
+  ┣ 📂plots
   ┣ 📜image.zip
   ┣ shortlisted_stations_v1.csv
   ┗ station_ind_v1.tsv
@@ -45,3 +45,9 @@ and only this might be required
 
 ### To-DO 
 - Improve the readme file.
+
+
+### Step by step guide
+
+- Make sure that efas, and the crowd water data is already present in the folder directories mentioned on the top.
+- Running the script `3_s_find_efas_id_cw.py` would generate `station_ind.tsv`. This will in default setting have all the station index inside which we have a crowdwater station. 
