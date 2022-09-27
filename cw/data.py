@@ -25,9 +25,9 @@ class Data(object):
 
         test_data = data[mask]
         train_data = data[~mask]
-        print(root_id)
-        print(train_data.shape)
-        print(test_data.shape)
+        # print(root_id)
+        # print(train_data.shape)
+        # print(test_data.shape)
 
         return train_data, test_data
 
@@ -51,11 +51,10 @@ class Data(object):
             train_data, test_data = self._get_ml_df(data, id)
             
             y_train = train_data["efas_dis06"].values
-            x_train =train_data.drop(columns = ["efas_dis06",]).values             
+            x_train =train_data.drop(columns = ["ROOT_ID","efas_dis06",]).values             
             
             y_test = test_data["efas_dis06"].values
-            x_test = test_data.drop(columns = ["efas_dis06",]).values             
-            
+            x_test = test_data.drop(columns = ["ROOT_ID","efas_dis06",]).values             
             ml_data = MLData(id, (x_train, y_train), (x_test, y_test))
 
             data_list.append(ml_data)

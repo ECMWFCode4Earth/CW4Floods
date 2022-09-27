@@ -15,7 +15,6 @@ data = raw_data.get_ml_data(["HEIGHT1[cm]","SPOTTED_AT", 'WIDTH[m]', "ORDER", "A
 
 model = "rf"
 
-
 for each_data in data:
     x_train = each_data.x_train
     x_test = each_data.x_test
